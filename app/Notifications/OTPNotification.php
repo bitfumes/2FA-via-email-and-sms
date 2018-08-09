@@ -7,8 +7,9 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Messages\MailMessage;
 use Bitfumes\KarixNotificationChannel\KarixChannel;
 use Bitfumes\KarixNotificationChannel\KarixMessage;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
-class OTPNotification extends Notification
+class OTPNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 

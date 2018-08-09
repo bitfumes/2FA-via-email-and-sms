@@ -29,7 +29,7 @@ class ResendOTPTest extends TestCase
     {
         Notification::fake();
         $user = $this->logInUser();
-        $response = $this->post('/resent_otp', ['via' => 'email']);
+        $response = $this->post('/resend_otp', ['via' => 'email']);
         Notification::assertSentTo([$user], OTPNotification::class);
     }
 }
