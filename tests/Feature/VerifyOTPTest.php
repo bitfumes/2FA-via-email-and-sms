@@ -5,11 +5,6 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-namespace Tests\Feature;
-
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-
 class VerifyOTPTest extends TestCase
 {
     use DatabaseMigrations;

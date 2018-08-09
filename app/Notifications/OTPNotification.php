@@ -12,14 +12,18 @@ class OTPNotification extends Notification
 {
     use Queueable;
 
+    public $via;
+    public $OTP;
+
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($via, $OTP)
     {
-        //
+        $this->via = $via;
+        $this->OTP = $OTP;
     }
 
     /**
@@ -30,15 +34,14 @@ class OTPNotification extends Notification
      */
     public function via($notifiable)
     {
-        return [KarixChannel::class];
+        return $this->via == 'sms' ? [KarixChannel::class] : ['mail'];
     }
 
     public function toKarix($notifiable)
     {
         return KarixMessage::create()
-                        ->to('+91xxxxxxxxxx')
-                        ->from('+91xxxxxxxxxx')
-                        ->content('This is demo for OTP');
+                        ->from('+919907016420')
+                        ->content("Your OTP for login is {$this->OTP}");
     }
 
     /**
@@ -50,9 +53,7 @@ class OTPNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->markdown('OTP', ['OTP' => $this->OTP]);
     }
 
     /**
