@@ -41,7 +41,7 @@ class LoginController extends Controller
             $request->filled('remember')
         );
         if ($result) {
-            auth()->user()->sendOTP();
+            auth()->user()->sendOTP(request('otp_via'));
         }
         return $result;
     }

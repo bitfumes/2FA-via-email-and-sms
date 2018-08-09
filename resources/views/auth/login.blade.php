@@ -50,6 +50,24 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="otp_via" id="via_sms" value="via_sms">
+                                    <label class="form-check-label" for="via_sms">
+                                        OTP via SMS
+                                    </label>
+                                </div>
+                                
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="otp_via" id="via_email" value="via_email">
+                                    <label class="form-check-label" for="via_email">
+                                        OTP via Email
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">

@@ -26,4 +26,12 @@ class LoginTest extends TestCase
         $this->logInUser(['isVerified' => 1]);
         $this->get('/home')->assertStatus(200);
     }
+
+    /**
+    * @test
+    */
+    public function a_user_can_select_opt_via_channel()
+    {
+        $this->get('/login')->assertSee('OTP via SMS');
+    }
 }

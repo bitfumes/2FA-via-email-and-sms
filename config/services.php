@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Third Party Services
@@ -35,4 +34,8 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'karix' => [
+        'id' => env('KARIX_ID'),
+        'token' => env('KARIX_TOKEN'),
+    ],
 ];
